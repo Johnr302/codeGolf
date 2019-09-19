@@ -6,15 +6,12 @@ while (i <= strings.length) {
   character = strings.charAt(i);
   if (character == " " || /[,'.!?\-]/.test(character)) {
     result += character;
-  } else if (!isNaN(character * 1)) {
-    result += character;
+  } else if (character == character.toUpperCase()) {
+    result += character.toLowerCase();
+  } else if (character == character.toLowerCase()) {
+    result += character.toUpperCase();
   } else {
-    if (character == character.toUpperCase()) {
-      result += character.toLowerCase();
-    }
-    if (character == character.toLowerCase()) {
-      result += character.toUpperCase();
-    }
+    result += character;
   }
   i++;
 }
